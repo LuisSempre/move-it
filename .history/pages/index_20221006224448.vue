@@ -53,6 +53,10 @@ interface Head {
 	title: string;
 }
 
+interface Challenges {
+	challengesLength: string;
+}
+
 export default Vue.extend({
 	components: {
 		CompletedChallenges,
@@ -61,6 +65,11 @@ export default Vue.extend({
 		Card,
 	},
 	head (): Head {
+		return {
+			title: 'Home | movue.it',
+		};
+	},
+  challenges (): Challenges {
 		return {
 			title: 'Home | movue.it',
 		};

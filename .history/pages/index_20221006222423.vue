@@ -47,7 +47,7 @@ import {
 	getRandomNumber,
 	playAudio,
 	sendNotification,
-} from '../utils';
+} from '~/utils';
 
 interface Head {
 	title: string;
@@ -70,7 +70,6 @@ export default Vue.extend({
 			Notification.requestPermission();
 		}
 	},
-	// eslint-disable-next-line vue/order-in-components
 	computed: {
 		...mapState('Countdown', {
 			hasCountdownCompleted: 'hasCompleted',

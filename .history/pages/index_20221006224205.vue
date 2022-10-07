@@ -89,7 +89,8 @@ export default Vue.extend({
 			this.setCountdownIsActive(flag);
 		},
 		getNewChallenge () {
-			const index = getRandomNumber(0, this.challengesLength);
+      const index = getRandomNumber(0, getCurrentChallengeIndex + 1);
+			// const index = getRandomNumber(0, this.challengesLength);
 			this.setCountdownHasCompleted(true);
 			this.setCurrentChallengeIndex(index);
 

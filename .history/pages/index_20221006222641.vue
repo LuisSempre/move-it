@@ -51,6 +51,7 @@ import {
 
 interface Head {
 	title: string;
+  challengesLength: string
 }
 
 export default Vue.extend({

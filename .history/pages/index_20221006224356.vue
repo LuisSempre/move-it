@@ -53,6 +53,10 @@ interface Head {
 	title: string;
 }
 
+interface Challenges {
+	challengesLength: string;
+}
+
 export default Vue.extend({
 	components: {
 		CompletedChallenges,

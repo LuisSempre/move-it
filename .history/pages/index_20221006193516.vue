@@ -38,7 +38,7 @@ import { Mutations as ChallengesMT } from '../store/Challenges/types';
 import { Mutations as CountdownMT } from '../store/Countdown/types';
 
 import CompletedChallenges from '../components/atoms/CompletedChallenges.vue';
-import Profile from "../components/molecules/Profile.vue"
+import Profile from "../components/molecules/Profile.vue';
 import Countdown from '../components/molecules/Countdown.vue';
 import Card from '../components/organisms/Card.vue';
 
@@ -47,7 +47,7 @@ import {
 	getRandomNumber,
 	playAudio,
 	sendNotification,
-} from '../utils';
+} from '~/utils';
 
 interface Head {
 	title: string;
@@ -70,7 +70,6 @@ export default Vue.extend({
 			Notification.requestPermission();
 		}
 	},
-	// eslint-disable-next-line vue/order-in-components
 	computed: {
 		...mapState('Countdown', {
 			hasCountdownCompleted: 'hasCompleted',

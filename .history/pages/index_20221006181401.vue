@@ -34,43 +34,42 @@
 import Vue from 'vue';
 
 import { mapState, mapGetters, mapMutations } from 'vuex';
-import { Mutations as ChallengesMT } from '../store/Challenges/types';
-import { Mutations as CountdownMT } from '../store/Countdown/types';
+import { Mutations as ChallengesMT } from '~/store/Challenges/types';
+import { Mutations as CountdownMT } from '~/store/Countdown/types';
 
-import CompletedChallenges from '../components/atoms/CompletedChallenges.vue';
-import Profile from "../components/molecules/Profile.vue"
-import Countdown from '../components/molecules/Countdown.vue';
-import Card from '../components/organisms/Card.vue';
+import CompletedChallenges from '~/components/atoms/CompletedChallenges.vue';
+import Profile from '~/components/molecules/Profile.vue';
+import Countdown from '~/components/molecules/Countdown.vue';
+import Card from '~/components/organisms/Card.vue';
 
 import {
 	scrollToElement,
 	getRandomNumber,
 	playAudio,
 	sendNotification,
-} from '../utils';
+} from '~/utils';
 
 interface Head {
 	title: string;
 }
 
 export default Vue.extend({
+	head (): Head {
+		return {
+			title: 'Home | movue.it',
+		};
+	},
 	components: {
 		CompletedChallenges,
 		Countdown,
 		Profile,
 		Card,
 	},
-	head (): Head {
-		return {
-			title: 'Home | movue.it',
-		};
-	},
 	mounted () {
 		if ('Notification' in window) {
 			Notification.requestPermission();
 		}
 	},
-	// eslint-disable-next-line vue/order-in-components
 	computed: {
 		...mapState('Countdown', {
 			hasCountdownCompleted: 'hasCompleted',

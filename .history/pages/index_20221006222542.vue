@@ -47,7 +47,7 @@ import {
 	getRandomNumber,
 	playAudio,
 	sendNotification,
-} from '../utils';
+} from '~/utils';
 
 interface Head {
 	title: string;
