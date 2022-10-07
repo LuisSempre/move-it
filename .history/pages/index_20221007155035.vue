@@ -89,7 +89,7 @@ export default Vue.extend({
 			this.setCountdownIsActive(flag);
 		},
 		getNewChallenge () {
-			const index = newFunction.call(this);
+			const index = getRandomNumber(0, this.challengesLength);
 			this.setCountdownHasCompleted(true);
 			this.setCurrentChallengeIndex(index);
 
@@ -107,8 +107,4 @@ export default Vue.extend({
 		},
 	},
 });
-function newFunction(this: any) {
-return getRandomNumber(0, this.challengesLength);
-}
-
 </script>

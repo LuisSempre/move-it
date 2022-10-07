@@ -1,5 +1,5 @@
 <template>
-	<section class="flex flex-col flex-1 lg:flex-row lg:flex-none lg:mt-16 sm:gap-x-10 md:gap-x-20">
+	<section class="flex flex-col lg:flex-row flex-1 lg:flex-none lg:mt-16 sm:gap-x-10 md:gap-x-20">
 		<div class="flex flex-col w-full lg:w-1/2">
 			<Profile />
 			<CompletedChallenges />
@@ -88,8 +88,8 @@ export default Vue.extend({
 			this.setCountdownHasCompleted(false);
 			this.setCountdownIsActive(flag);
 		},
-		getNewChallenge () {
-			const index = newFunction.call(this);
+		getNewChallenge ( challengesLength: any) {
+			const index = getRandomNumber(0, this.challengesLength);
 			this.setCountdownHasCompleted(true);
 			this.setCurrentChallengeIndex(index);
 
@@ -107,8 +107,4 @@ export default Vue.extend({
 		},
 	},
 });
-function newFunction(this: any) {
-return getRandomNumber(0, this.challengesLength);
-}
-
 </script>

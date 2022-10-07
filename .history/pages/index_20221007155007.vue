@@ -1,4 +1,5 @@
 <template>
+<div>
 	<section class="flex flex-col flex-1 lg:flex-row lg:flex-none lg:mt-16 sm:gap-x-10 md:gap-x-20">
 		<div class="flex flex-col w-full lg:w-1/2">
 			<Profile />
@@ -28,6 +29,7 @@
 		</div>
 		<Card id="challenge" class="w-full lg:w-1/2" />
 	</section>
+</div>
 </template>
 
 <script lang="ts">
@@ -53,6 +55,7 @@ interface Head {
 	title: string;
 }
 
+const newLocal = getRandomNumber(0, this.challengesLength);
 export default Vue.extend({
 	components: {
 		CompletedChallenges,
@@ -89,7 +92,7 @@ export default Vue.extend({
 			this.setCountdownIsActive(flag);
 		},
 		getNewChallenge () {
-			const index = newFunction.call(this);
+			const index = newLocal;
 			this.setCountdownHasCompleted(true);
 			this.setCurrentChallengeIndex(index);
 
@@ -107,8 +110,4 @@ export default Vue.extend({
 		},
 	},
 });
-function newFunction(this: any) {
-return getRandomNumber(0, this.challengesLength);
-}
-
 </script>

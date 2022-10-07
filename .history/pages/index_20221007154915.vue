@@ -53,6 +53,7 @@ interface Head {
 	title: string;
 }
 
+const newLocal = getRandomNumber(0, this.challengesLength);
 export default Vue.extend({
 	components: {
 		CompletedChallenges,
@@ -89,7 +90,7 @@ export default Vue.extend({
 			this.setCountdownIsActive(flag);
 		},
 		getNewChallenge () {
-			const index = newFunction.call(this);
+			const index = newLocal;
 			this.setCountdownHasCompleted(true);
 			this.setCurrentChallengeIndex(index);
 
@@ -107,8 +108,4 @@ export default Vue.extend({
 		},
 	},
 });
-function newFunction(this: any) {
-return getRandomNumber(0, this.challengesLength);
-}
-
 </script>
